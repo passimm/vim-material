@@ -14,6 +14,12 @@ if version > 580
   endif
 endif
 
+if has('gui_running')
+let s:italic = "italic"
+else
+let s:italic = ""
+endif
+
 let g:colors_name = "vim-material"
 
 let s:gui = {}
@@ -127,7 +133,7 @@ call s:hi("NonText",     s:gui.comment,    "",               "", "", "")
 call s:hi("helpExample", s:gui.blue,       "",               "", "", "")
 call s:hi("MatchParen",  "",               s:gui.selection,  "", "", "")
 call s:hi("Title",       s:gui.cyan,       "",               "", "", "")
-call s:hi("Comment",     s:gui.comment,    "",               "", "", "italic")
+call s:hi("Comment",     s:gui.comment,    "",               "", "", s:italic)
 call s:hi("String",      s:gui.green,      "",               "", "", "")
 call s:hi("Normal",      s:gui.foreground, s:gui.background, "", "", "")
 call s:hi("Visual",      "",               s:gui.selection,  "", "", "")
@@ -154,7 +160,7 @@ call s:hi("rubyClassName",       s:gui.yellow, "", "", "", "bold")
 call s:hi("rubyConstant",        s:gui.yellow, "", "", "", "")
 call s:hi("rubyKeywordAsMethod", s:gui.blue,   "", "", "", "")
 call s:hi("rubyOperator",        s:gui.purple, "", "", "", "")
-call s:hi("rubyPseudoVariable",  s:gui.red,   "", "", "", "italic")
+call s:hi("rubyPseudoVariable",  s:gui.red,   "", "", "", s:italic)
 call s:hi("rubySymbol",          s:gui.orange,   "", "", "", "")
 call s:hi("rubySymbolDelimiter", s:gui.cyan,   "", "", "", "")
 
@@ -193,7 +199,7 @@ call s:hi("jsBooleanTrue",     s:gui.orange,       "", "", "", "")
 call s:hi("jsClassBraces",     s:gui.cyan,       "", "", "", "")
 call s:hi("jsClassDefinition", s:gui.yellow,       "", "", "", "")
 call s:hi("jsClassKeyword",    s:gui.purple,       "", "", "", "")
-call s:hi("jsConditional",     s:gui.cyan,       "", "", "", "italic")
+call s:hi("jsConditional",     s:gui.cyan,       "", "", "", s:italic)
 call s:hi("jsFuncArgs",        s:gui.red,     "", "", "", "")
 call s:hi("jsFuncBraces",      s:gui.cyan,     "", "", "", "")
 call s:hi("jsFuncCall",        s:gui.blue,       "", "", "", "")
@@ -205,9 +211,9 @@ call s:hi("jsNoise",           s:gui.cyan,       "", "", "", "")
 call s:hi("jsObjectKey",       s:gui.foreground,     "", "", "", "")
 call s:hi("jsOperator",        s:gui.purple,     "", "", "", "")
 call s:hi("jsParens",          s:gui.cyan, "", "", "", "")
-call s:hi("jsReturn",          s:gui.cyan,       "", "", "", "italic")
+call s:hi("jsReturn",          s:gui.cyan,       "", "", "", s:italic)
 call s:hi("jsStorageClass",    s:gui.purple,     "", "", "", "")
-call s:hi("jsThis",            s:gui.red,     "", "", "", "italic")
+call s:hi("jsThis",            s:gui.red,     "", "", "", s:italic)
 
 " yats
 call s:hi("typescriptAccessibilityModifier", s:gui.purple, "", "", "", "")
